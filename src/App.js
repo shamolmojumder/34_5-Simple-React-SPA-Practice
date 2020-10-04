@@ -19,14 +19,19 @@ function App() {
       })
       .catch(error => console.log(error))
   }, [])
+
+  const handleAddedCountry=(country)=>{
+    console.log("added",country);
+  }
   return (
 
 
     <div className="App" >
-      <h1>{countries.length}</h1>
+      <h1>Country Loaded{countries.length}</h1>
+      <h1>Country added </h1>
 
       {
-        countries.map(country => <Country country={country}  key={country.alpha3Code} > </Country>)
+        countries.map(country => <Country country={country} handleAddedCountry={handleAddedCountry} key={country.alpha3Code} > </Country>)
       }
 
     </div >
