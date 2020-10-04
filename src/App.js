@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import Country from './components/Country/Country';
 
@@ -14,7 +14,7 @@ function App() {
 
         setCountries(data)
 
-        console.log(data);
+        // console.log(data);
         data.map(country => country.name)
       })
       .catch(error => console.log(error))
@@ -26,7 +26,7 @@ function App() {
       <h1>{countries.length}</h1>
 
       {
-        countries.map(country => <Country name={country.name}> </Country>)
+        countries.map(country => <Country country={country}  key={country.alpha3Code} > </Country>)
       }
 
     </div >
