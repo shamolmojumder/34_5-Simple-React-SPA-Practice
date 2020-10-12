@@ -24,7 +24,7 @@ function App() {
   }, [])
 
   const handleAddedCountry=(country)=>{
-    const newCart=[...cart,countries]
+    const newCart=[...cart,country]
     setCart(newCart)
   }
   return (
@@ -33,7 +33,7 @@ function App() {
     <div className="App" >
       <h1>Country Loaded: {countries.length}</h1>
       <h1>Country added {cart.length}  </h1>
-      <Cart></Cart>
+      <Cart cart={cart}></Cart>
      
 
       {
